@@ -1,0 +1,6 @@
+test:
+  prop: testValue
+server:
+  port:
+
+#h2数据库

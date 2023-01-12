@@ -1,0 +1,39 @@
+# åºç¨åç§°
+#spring.application.name=springboot_11_log
+
+# åºç¨æå¡ WEB è®¿é®ç«¯å£
+#server.port=8080
+
+#---
+#debug: true
+
+
+#---
+#logging:
+#  level:
+#    root: error
+#    bank: warn
+
+    #设置某个包的日日志级别
+#    com.aidybao.controller: debug
+
+    #设置分组，对某个组设置日志级别
+#    group:
+#      ebank: com.aidybao.controller,com.aidybao.service, com.aidybao.dao
+#      iservice: com.aidybao
+
+      #设置日志的格式
+#  pattern:
+    #console: "%d - %m %n"
+#    console: "%d %clr(%5p) ---[%16t] %clr(%-40.40c){cyan} : %m %n"
+  #日志文件
+#  file:
+#    name: server.log
+
+#设置日志保存大小和名字
+#  logback:
+#    rolling policy:
+#      max-file-size: 4KB
+#      file-name-pattern: server.%d{yyyy-MM-dd}.%i.log
+
+

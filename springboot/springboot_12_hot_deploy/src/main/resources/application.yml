@@ -1,0 +1,52 @@
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/ssm_db?serverTimezone=UTC
+      username: root
+      password: 12345678
+
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tbl_
+      #数据库id自动增长策略
+      id-type: auto
+      #mybatis-plus日志(上线运行的时候不要开，日志太多)
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+#多环境开发
+---
+#有相同配置时，主环境配置生效，否则，最后一个生效
+#spring:
+#  profiles:
+#    active: pro
+    #同时启动三个环境
+    #include: dev,test
+
+
+
+#如何使用maven配置环境
+#注意：切换环境的时候，需要先执行生命周期中的compile,然后再执行package,才能生效
+#spring:
+#  profiles:
+#    active: @profile.active@
+#    group:
+#      "dev": devDB, devMVC
+#      "pro": proDB, proMVC
+
+
+spring:
+  profiles:
+    active: dev
+    group:
+      "dev": devDB, devMVC
+      "pro": proDB, proMVC
+  devtools:
+    restart:
+      #设置不参与热部署的文件或文件夹
+      exclude: static/**,public/**,config/application.yml
+      #管不热部署功能
+      enabled: false
